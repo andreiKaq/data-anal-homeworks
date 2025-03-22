@@ -4,7 +4,7 @@ print("\033[92m")
 
 
 # Write a code to return "Hero" from given string
-from itertools import count
+# from itertools import count
 example_string1 = "Hello bro"
 sub_str1 = example_string1[:2] + example_string1[7:9]
 print(sub_str1)
@@ -35,7 +35,6 @@ count = 0
 for item in sub_str5:
     if item == 'estonia':
         count += 1
-
 
 print(f'String "Estonia" was founded {count} times ignoring the case')
 
