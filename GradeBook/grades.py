@@ -80,6 +80,7 @@ def remove_student(name, data):
     print('Студент удален!')
 
 def mr_Robot_logo():
+    # secret :)
     logo = '''
     
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
