@@ -6,6 +6,8 @@ from GradeBook.grades import add_student, add_grade, view_students
 
 data = database.load_data()
 
+
+
 while True:
     print("\n--- Менеджер журнала оценок ---")
     print("1. Добавить студента")
@@ -17,6 +19,9 @@ while True:
     print("7. Найти студента и удалить ему оценки")
     print("8. Удалить конкретного студента из спикска")
     print("9. Выйти")
+    print("fsociety")
+    print('\n')
+
 
     choice = input('Выберите опцию от 1 до 9: ')
 
@@ -49,6 +54,9 @@ while True:
     elif choice == '8':
         name = input('Введите имя студента которого хотите удалить: ')
         grades.remove_student(name, data)
+
+    elif choice == 'fsociety':
+        grades.mr_Robot_logo()
 
     elif choice == '9':
         database.save_data(data)
