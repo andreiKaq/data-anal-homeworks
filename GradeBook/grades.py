@@ -2,11 +2,14 @@ import json
 import database
 
 def add_student(name, data):
-    data[name] = []
+    if str(name):
+        data[name] = []
 
-    database.save_data(data)
+        database.save_data(data)
 
-    print('Студент добавлен!')
+        print('Студент добавлен!')
+    else:
+        print('Введите имя студента коректно! Пример: ИМЯ ФАМИЛИЯ. ')
 
 def add_grade(name, grade, data):
     student_found = False
@@ -61,3 +64,17 @@ def find_student(name, data):
             avg_grade = sum(grades) / len(grades)
             if name == student:
                 print(name, avg_grade)
+
+
+def remove_grades(name, data):
+    students = data
+    if name in students:
+        students[name] = []
+    print(f'Оценки студента {name} были успешно удалены!')
+
+def remove_student(name, data):
+    students = data
+    if name in students:
+        del students[name]
+
+    print('Студент удален!')

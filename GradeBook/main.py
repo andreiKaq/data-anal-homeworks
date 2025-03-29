@@ -14,9 +14,11 @@ while True:
     print("4. Найти лучшего студента")
     print("5. Найти худшего студента")
     print("6. Найти студента и увидеть его оценки и средний бал")
-    print("7. Выйти")
+    print("7. Найти студента и удалить ему оценки")
+    print("8. Удалить конкретного студента из спикска")
+    print("9. Выйти")
 
-    choice = input('Выберите опцию от 1 до 6: ')
+    choice = input('Выберите опцию от 1 до 9: ')
 
     if choice == '1':
         name = input("Введите имя студента: ")
@@ -41,6 +43,14 @@ while True:
         grades.find_student(name, data)
 
     elif choice == '7':
+        name = input('Укажите имя студента, оценки которого хотите удалить: ')
+        grades.remove_grades(name, data)
+
+    elif choice == '8':
+        name = input('Введите имя студента которого хотите удалить: ')
+        grades.remove_student(name, data)
+
+    elif choice == '9':
         database.save_data(data)
         print('Данный успешно сохранены! До встрчечи!')
         break
