@@ -41,14 +41,14 @@ age = current_year - year_of_birth
 
 
 
-code_2 = x // y
+code_2 = x % y
 code_2 *= 13
 code_2 = int(code_2 ** 0.5)
 
 code = code_1 + '-' + str(code_2) + '-' + str(code_3)
 
 
-print('Привет ' + user_name + ' ' +user_surname + ' Ваш возраст ' + str(age) + '. Ваш секретный код: ' + code)
+print('Привет ' + user_name + ' ' +user_surname + ' Ваш возраст ' + str(age) + '. Ваш секретный код: ' + code + '.')
 
 
 
