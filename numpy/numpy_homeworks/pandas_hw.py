@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+import matplotlib as plt
 df = pd.read_csv('baltics_dividends.csv', delimiter=',')
 
 
@@ -71,8 +71,20 @@ insert_at = cols.index('dividend_max') + 1
 
 cols.insert(insert_at, cols.pop(cols.index('dividend_avg')))
 df = df[cols]
-print(df['dividend_avg'])
+# print(df['dividend_avg'])
+# print(df['dividend_min'])
 
 #10. Сгруппируйте DataFrame по рынку и году начала выплат дивидендов, затем просуммируйте годовые выплаты по каждой группе.
 
+grouped = df.groupby(['market', 'years_from'])['annual_payout'].sum()
+# print(grouped)
+
+
 #11. Сгруппируйте DataFrame по рынку и создайте новый DataFrame, отображающий минимум и максимум годовых выплат, а также среднюю и медианную цену для каждой группы.
+grouped_df = df.groupby(['market']).agg({
+    'annual_payout': ['min', 'max'],
+    'price': ['mean', 'median'],
+})
+
+print(grouped_df)
+
